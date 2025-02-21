@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Atividades</title>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Gerenciador de Atividades</h1>
+
+    <form id="formAtividade">
+        <div>
+            <label for="descricao">Descrição da Atividade:</label>
+            <input type="text" id="descricao" required style="background-color: white;">
+        </div>
+        <div>
+            <label for="categoria">Categoria da Atividade:</label>
+            <select id="categoria" required style="background-color: white;">
+                <option value="" disabled selected hidden>Selecione uma categoria</option>
+                <option value="Ensino">Ensino</option>
+                <option value="Extensão">Extensão</option>
+                <option value="Pesquisa">Pesquisa</option>
+            </select>
+        </div>
+        <div id="containerTipoEspecifico">
+            <label for="tipoEspecifico">Tipo Específico da Atividade:</label>
+            <select id="tipoEspecifico" required style="background-color: white;">
+                <option value="" disabled selected hidden>Selecione a categoria para ver as opções</option>
+            </select>
+        </div>
+        <div>
+            <label for="horas">Total de Horas:</label>
+            <input type="number" id="horas" min="1" required style="background-color: white;">
+        </div>
+        <div>
+            <button type="submit">Adicionar Atividade</button>
+        </div>
+    </form>
+
+    <h2>Atividades Registradas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Tipo Específico</th>
+                <th>Horas</th>
+                <th>Horas Aproveitadas</th>
+            </tr>
+        </thead>        
+        <tbody id="tabelaAtividades"></tbody>
+    </table>
+    
+    <h2>Resumo por Categoria</h2>
+    <ul id="resumoCategoria"></ul>
+
+    <h2>Resumo por Atividade</h2>
+    <ul id="resumoAtividade"></ul>
+</body>
+
+</html>
